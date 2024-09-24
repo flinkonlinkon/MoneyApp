@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+                  
+                    <div class="text-center text-2xl font-bold mt-3">
+                          <span class="">Money</span>
+                        <div id="main-money" class="">
+                            9200
+                        </div>
+                        <div class="divider relative top-[-15px]"></div>
+                    </div>
+                    <div id="all-btns" class="p-5 gap-3">
+                        <button id="add-money" class="btn btn-xs">Add Money</button>
+                        <button id="cash-out" class="btn btn-xs">Cash out</button>
+                        <button id="send-money" class="btn btn-xs">Send Money</button>
+                        <button id="pay-bill" class="btn btn-xs">Pay Bill</button>
+                        <button id="history" class="btn btn-xs">History</button>
+                    </div>
+                     <!-- addMoney start -->
+                    <div id="add-money-sectaion" class="p-2 hidden">
+                        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+                          <form class="card-body">
+                            <div class="form-control">
+                              <select id="banks-select" class="select select-bordered w-full max-w-xs">
+                                <option disabled selected>Select Your Bank</option>
+                                <option>Linkon Bank of BD</option>
+                                <option>Kamal Bank of BD</option>
+                                <option>Nafis Bank of BD</option>
+                              </select>
+                              <label class="label">
+                                <span class="label-text">Bank Number</span>
+                              </label>
+                              <input id="bank-number" type="text" placeholder="Your Bank Number" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                              <label class="label">
+                                <span class="label-text">Money</span>
+                              </label>
+                              <input id="bank-money" type="text" placeholder="Money" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                              <label class="label">
+                                <span  class="label-text">pin code</span>
+                              </label>
+                              <input type="password" placeholder="pin" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control mt-6">
+                              <button id="add-money-btn" class="btn btn-primary">Add Money</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    <!-- addMoney end -->
+
+                     <!-- cashOut start -->
+                    <div id="cash-out-section" class="p-2 hidden">
+                        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+                          <form class="card-body">
+                            <div class="form-control">
+                              <select id="c-banks" class="select select-bordered w-full max-w-xs">
+                                <option disabled selected>Select Your Bank</option>
+                                <option>Linkon Bank of BD</option>
+                                <option>Kamal Bank of BD</option>
+                                <option>Nafis Bank of BD</option>
+                              </select>
+                              <label class="label">
+                                <span class="label-text">Bank Number</span>
+                              </label>
+                              <input id="bank-number-c" type="text" placeholder="Your Bank Number" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                              <label class="label">
+                                <span class="label-text">Money</span>
+                              </label>
+                              <input id="bank-money-c" type="text" placeholder="Money" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                              <label class="label">
+                                <span  class="label-text">pin code</span>
+                              </label>
+                              <input type="password" placeholder="pin" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control mt-6">
+                              <button id="cash-out-btn" class="btn btn-primary">Cash out</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    <!-- Cash out end -->
+
+                     <!-- sendMoney start -->
+                     <div id="send-money-sectaion" class="p-2 hidden"> 
+                        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+                          <form class="card-body">
+                            <div class="form-control">
+                              <label class="label">
+                                <span class="label-text">Phone Number</span>
+                              </label>
+                              <input id="phone-number-s" type="text" placeholder="Phone Number" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                              <label class="label">
+                                <span class="label-text">Money</span>
+                              </label>
+                              <input id="phone-money-s" type="text" placeholder="Money" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                              <label class="label">
+                                <span  class="label-text">pin code</span>
+                              </label>
+                              <input type="password" placeholder="pin" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control mt-6">
+                              <button id="send-money-btn" class="btn btn-primary">Send Money</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div> 
+                    <!-- sendMoney end -->
+
+                     <!-- payBill start -->
+                    <div id="pay-bill-sectaion" class="p-2">
+                        <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
+                          <form class="card-body">
+                            <div class="form-control">
+                              <select id="bill-ids" class="select select-bordered w-full max-w-xs">
+                                <option disabled selected>Pay Bill</option>
+                                <option>Electricity Bill</option>
+                                <option>Internet Bill</option>
+                                <option>Gas Bill</option>
+                                <option>Water Bill</option>
+                              </select>
+                              <label class="label">
+                                <span class="label-text">Bill Id</span>
+                              </label>
+                              <input id="bill-number" type="text" placeholder="Bill Id" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                              <label class="label">
+                                <span class="label-text">Money</span>
+                              </label>
+                              <input id="bill-money" type="text" placeholder="Money" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control">
+                              <label class="label">
+                                <span  class="label-text">pin code</span>
+                              </label>
+                              <input type="password" placeholder="pin" class="input input-bordered" required />
+                            </div>
+                            <div class="form-control mt-6">
+                              <button id="bill-btn" class="btn btn-primary">Pay Bill</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    <!-- payBill end -->
+
+                     <div id="his" class="p-3 text-center hidden">
+
+                     </div>
+
+                     
+                  
+      
+      <script src="home.js"></script>
+      <script src="utilets.js"></script>
+</body>
+</html>
