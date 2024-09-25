@@ -22,7 +22,10 @@ document.getElementById('pay-bill').addEventListener('click',function(){
     hideAndShow('pay-bill-sectaion')
 })
 
-
+document.querySelector('#modal-c-btn').addEventListener('click', function() {
+    document.getElementById('my_modal_1').close();
+  });
+  
 
 btnAddMoney.addEventListener('click',function(e){
     
@@ -33,6 +36,13 @@ btnAddMoney.addEventListener('click',function(e){
      let bankNumber = moneyGetId('bank-number')
      let Mm = document.getElementById('main-money').innerText
      let banks = document.getElementById('banks-select').value
+     if(isNaN(bankMoney)){
+        alert("something is worng")
+        return;
+     } else if (bankMoney <=0 || bankMoney >= Mm){
+        alert("something is worng")
+        return;
+     } else{
      
      console.log(banks);
      
@@ -44,9 +54,10 @@ btnAddMoney.addEventListener('click',function(e){
     document.getElementById('his').appendChild(p);
     document.getElementById('main-money').innerHTML = `${sum}`
     
-    
+    btnAll('bank-money').value = ''
+   btnAll('bank-number').value = ''
      
-     
+     }
 
     })
 
@@ -60,6 +71,13 @@ cashOut.addEventListener('click',function(e){
     let bankNumber = moneyGetId('bank-number-c')
     let Mm = document.getElementById('main-money').innerText
     let banks = document.getElementById('c-banks').value
+    if(isNaN(bankMoney)){
+        alert("something is worng")
+        return;
+     } else if (bankMoney <=0 || bankMoney >= Mm){
+        alert("something is worng")
+        return;
+     } else{
     
     console.log(banks);
     
@@ -70,7 +88,9 @@ cashOut.addEventListener('click',function(e){
     p.innerHTML = `<p class="mt-3 text-xl font-bold p-2 border-solid border-2 border-gray-100 rounded-lg w-4/5 mx-auto">Cash Out: ${bankMoney}<br> From Bank:  ${banks}<br>Transaction Id: ${bankNumber} <br>Current Balance: ${sum}<br>Date: ${new Date().toDateString()} </p>`
    document.getElementById('his').appendChild(p);
    document.getElementById('main-money').innerHTML = `${sum}`
-  
+    btnAll('bank-money-c').value = ''
+   btnAll('bank-number-c').value = ''
+     }
 
     })
 sendMoney.addEventListener('click',function(e){
@@ -82,6 +102,13 @@ sendMoney.addEventListener('click',function(e){
     let bankMoney = moneyGetId('phone-money-s')
     let bankNumber = moneyGetId('phone-number-s')
     let Mm = document.getElementById('main-money').innerText
+    if(isNaN(bankMoney)){
+        alert("something is worng")
+        return;
+     } else if (bankMoney <=0 || bankMoney >= Mm){
+        alert("something is worng")
+        return;
+     } else{
     
     
 
@@ -91,7 +118,9 @@ sendMoney.addEventListener('click',function(e){
     p.innerHTML = `<p class="mt-3 text-xl font-bold p-2 border-solid border-2 border-gray-100 rounded-lg w-4/5 mx-auto">Send Money: ${bankMoney}<br>Phone Id: 0${bankNumber} <br>Current Balance: ${sum}<br>Date: ${new Date().toDateString()} </p>`
    document.getElementById('his').appendChild(p);
    document.getElementById('main-money').innerHTML = `${sum}`
-  
+    btnAll('phone-money-s').value = ''
+   btnAll('phone-number-s').value = ''
+     }
 
     })
 payBill.addEventListener('click',function(e){
@@ -105,7 +134,13 @@ payBill.addEventListener('click',function(e){
     let Mm = document.getElementById('main-money').innerText
     let banks = document.getElementById('bill-ids').value
   
-    
+    if(isNaN(bankMoney)){
+        alert("something is worng")
+        return;
+     } else if (bankMoney <=0 || bankMoney >= Mm){
+        alert("something is worng")
+        return;
+     } else{
     
 
     let mainMoney = parseFloat(Mm)
@@ -120,7 +155,10 @@ payBill.addEventListener('click',function(e){
     p.innerHTML = `<p class="mt-3 text-xl font-bold p-2 border-solid border-2 border-gray-100 rounded-lg w-4/5 mx-auto">Pay Bill: ${newSum}<br>Bill Id: ${bankNumber}<br>Bill Pay to: ${banks}<br>Tax: ${teaxs} <br>Current Balance: ${sum}<br>Date: ${new Date().toDateString()} </p>`
    document.getElementById('his').appendChild(p);
    document.getElementById('main-money').innerHTML = `${sum}`
-  
+   btnAll('bill-money').value = ''
+   btnAll('bill-number').value = ''
+   
+     }
 
     })
 

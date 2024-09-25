@@ -53,7 +53,19 @@
                               <input type="password" placeholder="pin" class="input input-bordered" required />
                             </div>
                             <div class="form-control mt-6">
-                              <button id="add-money-btn" class="btn btn-primary">Add Money</button>
+                              <button id="add-money-btn" class="btn btn-primary" onclick="my_modal_1.showModal()">Add Money</button>
+                              <dialog id="my_modal_1" class="modal">
+                                <div class="modal-box">
+                                  <h3 class="text-lg font-bold">Hello!</h3>
+                                  <p class="py-4">Press ESC key or click the button below to close</p>
+                                  <div class="modal-action">
+                                    <form method="dialog">
+                                      <!-- if there is a button in form, it will close the modal -->
+                                      <button id="modal-c-btn" class="btn">Close</button>
+                                    </form>
+                                  </div>
+                                </div>
+                              </dialog>
                             </div>
                           </form>
                         </div>
